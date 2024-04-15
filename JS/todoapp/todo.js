@@ -1,16 +1,36 @@
-function get_todos(){
-var todos = new Array;
-var todos_str = localStorage.getItem('todo');
-if(todos_str !==null){
-  todos = JSON.parse(todo_str);
+let todoList = [];
 
+function addTodo() {
+  let input = document.getElementById("todoInput");
+  let todoText = input.value.trim();
+  
+  if (todoText !== "") {
+    todoList.push(todoText);
+    input.value = "";
+    renderTodos();
+  }
 }
-return todos;
+
+function deleteTodo(index) {
+  todoList.splice(index, 1);
+  renderTodos();
 }
-function add(){
-  var task = document.getElementById('task').ariaValueMax;
-  todos.push(task)
-  localStorage.setItem('todo',JSON.stringify(todos));
- Show();
- return false;
+
+function renderTodos() {
+  let list = document.getElementById("todoList");
+  list.innerHTML = "";
+  
+  todoList.forEach((todo, index) => {
+    let li = document.createElement("li");
+    li.textContent = todo;
+    
+    let deleteButton = document.createElement("button");
+    deleteButton.textContent = "Delete";
+    deleteButton.onclick = function() {
+      deleteTodo(index);
+    };
+    
+    li.appendChild(deleteButton);
+    list.appendChild(li);
+  });
 }
