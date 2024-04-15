@@ -16,6 +16,14 @@ function deleteTodo(index) {
   renderTodos();
 }
 
+function editTodo(index) {
+  let newText = prompt("Edit todo:", todoList[index]);
+  if (newText !== null) {
+    todoList[index] = newText.trim();
+    renderTodos();
+  }
+}
+
 function renderTodos() {
   let list = document.getElementById("todoList");
   list.innerHTML = "";
@@ -24,12 +32,19 @@ function renderTodos() {
     let li = document.createElement("li");
     li.textContent = todo;
     
+    let editButton = document.createElement("button");
+    editButton.textContent = "Edit";
+    editButton.onclick = function() {
+      editTodo(index);
+    };
+    
     let deleteButton = document.createElement("button");
     deleteButton.textContent = "Delete";
     deleteButton.onclick = function() {
       deleteTodo(index);
     };
     
+    li.appendChild(editButton);
     li.appendChild(deleteButton);
     list.appendChild(li);
   });
