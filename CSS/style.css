@@ -1,0 +1,63 @@
+
+  /*
+       color is used for foreground color
+  */
+
+
+/*
+SELECTORS IN CSS
+
+UNIVERSAL SELECTOR
+ 
+*{}
+
+element selector
+  h1{}
+
+class selector 
+  .classname{}
+
+id selector
+  #myid{}
+  }
+*/
+
+/*
+Practice Set 1
+Q1: Create a simple div with an id "box". Add some text content inside the div. Set its background color to blue.
+Q2: Create 3 headings with h1, h2 & h3.
+E
+Give them all a class "he
+Q3: Create a button & set its background color to : green using css stylesheet
+blue using <style> tag pink using inline style
+*/
+#box{
+  background-color: blue;
+}
+.heading{
+  color: red;
+}
+
+.mybtn{
+  background-color: green;
+}
+
+/*
+Text Properties
+text-align
+text-align : left / right / center 
+
+Text Properties
+text-decoration
+text-decoration : underline / overline / line-through
+
+Text Properties
+font-weight
+font-weight : normal / bold / bolder / lighter
+font-weight : 100-900
+
+Text Properties
+font-family
+font-family : arial APNA font-family : arial, roboto 
+*/
+
